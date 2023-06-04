@@ -7,6 +7,7 @@ import './HomePage.css';
 export default function Homepage() {
   const [contactData, setContactData] = useState([]);
   const [search, setSearch] = useState('');
+  
   const [newContact, setNewContact] = useState({
     name: '',
     email: '',
@@ -102,7 +103,6 @@ export default function Homepage() {
         },
         body: JSON.stringify({
           email: localStorage.getItem("userEmail"),
-          contactId: contactId,
           name: updatedContact.name,
           phone: updatedContact.phone
         }),

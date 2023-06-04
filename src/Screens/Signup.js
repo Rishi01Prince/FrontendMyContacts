@@ -21,36 +21,7 @@ export default function Signup() {
 
 
 
-    //Api Fetching of location
-    const handleAddress = async (e) => {
-        e.preventDefault();
-      
-        try {
-          const position = await new Promise((resolve, reject) => {
-            navigator.geolocation.getCurrentPosition(resolve, reject);
-          });
-      
-          const { latitude, longitude } = position.coords;
-      
-          const response = await fetch("https://mycontactbackend.onrender.com/api/getlocation", {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ lat: latitude, long: longitude })
-          });
-      
-          const { location } = await response.json();
-      
-          setAddress(location);
-          setCredentials({ ...credentials, address: location });
-        } catch (error) {
-          console.error("Error fetching location:", error);
-          // Handle the error case
-        }
-      };
-      
-      
+   
 
 
     const handleSubmit = async (e) => {
@@ -90,6 +61,7 @@ export default function Signup() {
 
         const json = await response.json()
         if (json.success) {
+            localStorage.setItem("name", credentials.name);
             console.log(json);
             navigate("/login")
 
