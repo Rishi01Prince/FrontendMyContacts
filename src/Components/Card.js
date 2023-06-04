@@ -25,7 +25,7 @@ export default function Card(props) {
 
 
   const handleSave = () => {
-    fetch('/api/updateData', {
+    fetch('https://mycontactbackend.onrender.com/api/updateData', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ export default function Card(props) {
     const confirmDelete = window.confirm('Are you sure you want to delete this contact?');
   
     if (confirmDelete) {
-      fetch('/api/deleteData', {
+      fetch('https://mycontactbackend.onrender.com/api/deleteData', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

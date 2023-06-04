@@ -16,7 +16,7 @@ export default function Homepage() {
   const fetchContactData = async () => {
     try {
       const userEmail = localStorage.getItem("userEmail");
-      const response = await fetch("http://localhost:5000/api/mycurrentData", {
+      const response = await fetch("https://mycontactbackend.onrender.com/api/mycurrentData", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -46,7 +46,7 @@ export default function Homepage() {
 
     let userEmail = localStorage.getItem("userEmail");
     try {
-      const response = await fetch('http://localhost:5000/api/addContact', {
+      const response = await fetch('https://mycontactbackend.onrender.com/api/addContact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ export default function Homepage() {
 
   const handleDelete = async (contactId) => {
     try {
-      const response = await fetch('http://localhost:5000/api/deleteData', {
+      const response = await fetch('https://mycontactbackend.onrender.com/api/deleteData', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ export default function Homepage() {
 
   const handleUpdate = async (contactId, updatedContact) => {
     try {
-      const response = await fetch('http://localhost:5000/api/updateData', {
+      const response = await fetch('https://mycontactbackend.onrender.com/api/updateData', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
