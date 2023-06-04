@@ -1,23 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import { Link , useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import { Badge } from 'react-bootstrap';
 
 function Navbar() {
     const navigate = useNavigate();
-    const [userName , setUserName] = useState(localStorage.getItem("name"));
-  
-    
+    const [userName, setUserName] = useState(localStorage.getItem("name"));
 
-    const  handleLogout = () =>{
-      
-       localStorage.removeItem("authToken");
-          localStorage.removeItem("userEmail");
+
+
+    const handleLogout = () => {
+
+        localStorage.removeItem("authToken");
+        localStorage.removeItem("userEmail");
+        localStorage.removeItem("name");
         navigate("/login");
     }
+
     useEffect(() => {
         setUserName(localStorage.getItem("name"));
-    }, [localStorage.getItem("name")])
+    }, [localStorage.getItem("name")]);
 
     return (
         <div>
@@ -25,7 +27,7 @@ function Navbar() {
                 <div className="container-fluid">
 
 
-                    <Link className="navbar-brand " to="/">Hello !! {userName} </Link>
+                    <Link className="navbar-brand " to="/"> Xeno  {userName} </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -46,8 +48,8 @@ function Navbar() {
                         </ul>
 
 
-                       
-                       {/* // Agar Login ni hai to signup or login oprion dikhega warna  log out dikhao */}
+
+                        {/* // Agar Login ni hai to signup or login oprion dikhega warna  log out dikhao */}
                         {(!localStorage.getItem("authToken")) ?
                             <div>
                                 <Link className="btn bg bg-white mx-1" to="/login">Login</Link>
@@ -56,9 +58,9 @@ function Navbar() {
                             :
                             <div>
                                 <div>
-                                  
+
                                     <Link className="btn bg bg-white  text-danger mx-1" to="/login" onClick={handleLogout}>Logout</Link>
-                                    
+
                                 </div>
                             </div>
                         }
