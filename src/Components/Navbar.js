@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link , useNavigate} from 'react-router-dom';
 import './Navbar.css';
 import { Badge } from 'react-bootstrap';
@@ -15,6 +15,9 @@ function Navbar() {
           localStorage.removeItem("userEmail");
         navigate("/login");
     }
+    useEffect(() => {
+        setUserName(localStorage.getItem("name"));
+    }, [localStorage.getItem("name")])
 
     return (
         <div>
