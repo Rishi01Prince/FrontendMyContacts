@@ -1,0 +1,118 @@
+/* MyOrder.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+.rishicontainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.rishimyorder-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: #35495e;
+    margin-bottom: 20px;
+}
+.rishiorder-card {
+  background-color: #f7fafc;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
+  width: 700px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.rishiorder-card:hover {
+  transform: translateY(-5px);
+}
+
+.rishiorder-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.rishiorder-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.rishiorder-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #35495e;
+  margin-bottom: 10px;
+}
+
+.rishiorder-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.rishiorder-info-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.rishiorder-info-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #7386a0;
+  margin-bottom: 5px;
+}
+
+.rishiorder-info-value {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  color: #35495e;
+}
+
+.rishiorder-quantity,
+.rishiorder-span,
+.rishiorder-date {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #7386a0;
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: #e5ecf3;
+}
+
+.rishiorder-date {
+  margin-bottom: 10px;
+}
+
+.rishiorder-price {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  color: #ff5e5e;
+  margin-top: 10px;
+}
+
+.rishiorder-card:hover .rishiorder-info-value {
+  color: #ff5e5e;
+}
+
+.rishino-order-data {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  color: #7386a0;
+  margin: 40px;
+}

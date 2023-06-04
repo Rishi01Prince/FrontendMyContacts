@@ -1,0 +1,21 @@
+.footer {
+  background-image: linear-gradient(to right, #fcbf1e, #40d7fd);
+  font-family: 'Pacifico', cursive;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer a {
+    color: #ff0000;
+  }
+  
+  .footer a:hover {
+    color: #06ff7f;
+  }
+
+  .te{
+    color: #fff;
+    
+  }
+  

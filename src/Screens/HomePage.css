@@ -1,0 +1,148 @@
+/* HomePage.css */
+
+
+.homepage {
+    background-color: #f8f9fa;
+    padding-bottom: 40px;
+  }
+
+  /* HomePage.css */
+
+.searchdiv {
+    background-color: #f8f9fa;
+    padding: 20px;
+  }
+  
+  .searchdiv .d-flex {
+    justify-content: center;
+  }
+  
+  .searchdiv .form-control {
+    width: 600px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    background-color: #e9ecef;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    outline: none;
+  }
+  
+  
+  
+  .searchdiv .form-control:focus {
+    background-color: #fff;
+  }
+  
+
+
+  /* HomePage.css */
+
+/* Container styles */
+.container {
+    text-align: center;
+    margin-top: 20px;
+    color: crimson;
+    font-family: cursive;
+  }
+  
+  /* Search container styles */
+  .search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* Search input styles */
+  .search-input {
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    background-color: #f8f9fa;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    outline: none;
+  }
+  
+  /* Optional: Adjust the width and other styles as per your preference */
+  
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+/*   
+
+  /* Rest of your styles */
+  
+
+  /* HomePage.css */
+
+.title {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.searchdiv {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.container {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+}
+
+.btn-primary {
+  margin-top: 10px;
+}
+
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-container .form-group {
+  margin-bottom: 20px;
+}
+
+.form-container .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-container .form-group input {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-container .btn-primary {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.form-container .btn-primary:hover {
+  background-color: #0069d9;
+}
