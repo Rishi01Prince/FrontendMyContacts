@@ -8,7 +8,7 @@ export default function Homepage() {
 
   const [contactData, setContactData] = useState([]);
   const [search, setSearch] = useState('');
-  const[uemail , setUemail] = useState(localStorage.getItem("userEmail"));
+  const[docid , setDocid] = useState('');
   
 
   const [newContact, setNewContact] = useState({
@@ -21,7 +21,7 @@ export default function Homepage() {
 
     try {
       const userEmail = localStorage.getItem("userEmail");
-      setUemail(userEmail);
+      
       const response = await fetch("https://mycontactbackend.onrender.com/api/mycurrentData", {
         method: 'POST',
         headers: {
@@ -34,6 +34,7 @@ export default function Homepage() {
 
         // My documnet
         const data = await response.json();
+        setDocid(data._id);
 
         if (data && data.contacts) {
           //My array of contacts
@@ -118,7 +119,7 @@ export default function Homepage() {
 
             map((x) => (
               <div className="col-md-4" key={x.email}>
-                <Card vdata={x} uemail = {uemail} />
+                <Card vdata={x} id = {docid} />
               </div>
             ))
           }

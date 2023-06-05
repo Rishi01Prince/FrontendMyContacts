@@ -74,45 +74,40 @@ export default function Card(props) {
 
 
 
-  const handleDelete =  () => {
-
-
+  const handleDelete = async () => {
     const confirmDelete = window.confirm('Are you sure you want to delete this contact?');
-  
-
+    
     if (confirmDelete) {
-
-      fetch('https://mycontactbackend.onrender.com/api/deleteData', {
-
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          userEmail: props.uemail,
-          email: props.vdata.email, // provide the email associated with the contact
-          name: props.vdata.name,
-          phone: props.vdata.phone,
-        }),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-
-          if (data.success) {
-           console.log("deleted");
-          } else {
-            console.error(data.error);
-          }
-        })
-        .catch((error) => {
-          console.error('An error occurred while deleting the contact:', error);
+      try {
+        const response = await fetch('https://mycontactbackend.onrender.com/api/deleteData', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            id: props.id,
+            email: props.vdata.email, // provide the email associated with the contact
+            name: props.vdata.name,
+            phone: props.vdata.phone,
+          }),
         });
+        const data = await response.json();
+  
+        if (data.success) {
+          console.log("deleted");
+        } else {
+          console.error(data.error);
+        }
+      } catch (error) {
+        console.error('An error occurred while deleting the contact:', error);
+      }
     }
-
+  
     if (confirmDelete) {
       setDeleted(true);
     }
   };
+  
 
   if (deleted) {
     return null; // Hide the card if deleted
