@@ -8,6 +8,7 @@ export default function Homepage() {
 
   const [contactData, setContactData] = useState([]);
   const [search, setSearch] = useState('');
+  
 
   const [newContact, setNewContact] = useState({
     name: '',
