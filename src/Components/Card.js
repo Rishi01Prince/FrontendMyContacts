@@ -118,7 +118,7 @@ export default function Card(props) {
   }
 
   return (
-    
+
     <div className="card mt-3" style={{ width: '18rem', maxHeight: '380px' }}>
       <div style={{ display: 'flex', height: '150px', width: '18rem' }}>
         <img
@@ -169,3 +169,6 @@ export default function Card(props) {
     </div>
   );
 }
+
+
+
