@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Card.css';
 
 export default function Card(props) {
+  
   const [editing, setEditing] = useState(false);
   const [name, setName] = useState(props.vdata.name);
   const [email, setEmail] = useState(props.vdata.email);
@@ -12,7 +13,7 @@ export default function Card(props) {
     setEditing(true);
   };
 
- 
+
   const handleCancel = () => {
     // Reset the form values to the original contact data
     setName(props.vdata.name);
@@ -48,17 +49,17 @@ export default function Card(props) {
       .catch((error) => {
         console.error('An error occurred while updating the contact:', error);
       });
-      setEditing(false);
+    setEditing(false);
   };
-  
-  
-  
+
+
+
 
   const handleDelete = () => {
-    
+
 
     const confirmDelete = window.confirm('Are you sure you want to delete this contact?');
-  
+
     if (confirmDelete) {
       fetch('https://mycontactbackend.onrender.com/api/deleteData', {
         method: 'POST',
@@ -84,10 +85,6 @@ export default function Card(props) {
     }
 
     if (confirmDelete) {
-      // Delete the contact from the backend
-      // You can make an API call here to delete the contact
-
-      // Set the deleted state to true to hide the card
       setDeleted(true);
     }
   };
@@ -121,7 +118,7 @@ export default function Card(props) {
           </div>
         )}
       </div>
-      
+
       <div className="card-footer btn-group-sm">
         {editing ? (
           <div>
@@ -134,13 +131,14 @@ export default function Card(props) {
           </div>
         ) : (
           <div>
-            <button className="btn btn-primary" style={{paddingTop :'10px'}}  onClick={handleEdit}>
+            <button className="btn btn-primary btn-lg" onClick={handleEdit}>
               Edit
             </button>
-            <button className="btn btn-danger"   onClick={handleDelete}>
+            <button className="btn btn-danger btn-lg ml-2" onClick={handleDelete}>
               Delete
             </button>
           </div>
+
         )}
       </div>
     </div>
