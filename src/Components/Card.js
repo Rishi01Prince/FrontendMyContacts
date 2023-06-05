@@ -8,7 +8,7 @@ export default function Card(props) {
   const [email, setEmail] = useState(props.vdata.email);
   const [phone, setPhone] = useState(props.vdata.phone);
   const [deleted, setDeleted] = useState(false);
-  const [userEmail, setUserEmail] = useState(localStorage.getItem("userEmail"));
+
 
   const handleEdit = () => {
     setEditing(true);
@@ -29,7 +29,7 @@ export default function Card(props) {
   const handleSave = async () => {
 
 
-    setUserEmail(localStorage.getItem("userEmail"));
+  
     try {
       const response = await fetch('https://mycontactbackend.onrender.com/api/updateData', {
         method: 'POST',
@@ -37,7 +37,7 @@ export default function Card(props) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          userEmail: userEmail,
+          userEmail: props.uemail,
 
           email: props.vdata.email, // provide the email associated with the contact
           name: props.vdata.name,
