@@ -5,9 +5,10 @@ import Card from '../Components/Card';
 import './HomePage.css';
 
 export default function Homepage() {
+
   const [contactData, setContactData] = useState([]);
   const [search, setSearch] = useState('');
-  
+
   const [newContact, setNewContact] = useState({
     name: '',
     email: '',
@@ -15,6 +16,7 @@ export default function Homepage() {
   });
 
   const fetchContactData = async () => {
+
     try {
       const userEmail = localStorage.getItem("userEmail");
       const response = await fetch("https://mycontactbackend.onrender.com/api/mycurrentData", {
@@ -26,8 +28,12 @@ export default function Homepage() {
       });
 
       if (response.ok) {
+
+        // My documnet
         const data = await response.json();
+
         if (data && data.contacts) {
+          //My array of contacts
           setContactData(data.contacts);
         }
       } else {
@@ -42,7 +48,9 @@ export default function Homepage() {
     fetchContactData();
   }, []);
 
+
   const handleAddContact = async (e) => {
+
     e.preventDefault();
 
     let userEmail = localStorage.getItem("userEmail");
@@ -58,7 +66,7 @@ export default function Homepage() {
       if (response.ok) {
         fetchContactData();
         setNewContact({ name: '', email: '', phone: '' });
-      } 
+      }
       else {
         console.log('Error:', response.status);
       }
@@ -67,60 +75,15 @@ export default function Homepage() {
     }
   };
 
+
   const handleInputChange = (e) => {
     setNewContact({ ...newContact, [e.target.name]: e.target.value });
   };
 
-  const handleDelete = async (contactId) => {
-    try {
-      const response = await fetch('https://mycontactbackend.onrender.com/api/deleteData', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: localStorage.getItem("userEmail"),
-          contactId: contactId
-        }),
-      });
 
-      if (response.ok) {
-        fetchContactData();
-      } else {
-        console.log('Error:', response.status);
-      }
-    } catch (error) {
-      console.log('Error:', error);
-    }
-  };
 
-  const handleUpdate = async (contactId, updatedContact) => {
-    try {
-      const response = await fetch('https://mycontactbackend.onrender.com/api/updateData', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: localStorage.getItem("userEmail"),
-          name: updatedContact.name,
-          phone: updatedContact.phone
-        }),
-      });
 
-      if (response.ok) {
-        fetchContactData();
-      } else {
-        console.log('Error:', response.status);
-      }
-    } catch (error) {
-      console.log('Error:', error);
-    }
-  };
-
-  const filteredContacts = contactData.filter((contact) =>
-    contact.name.toLowerCase().startsWith(search.toLowerCase())
-  );
+  // const filteredContacts = 
 
   return (
     <div>
@@ -144,15 +107,19 @@ export default function Homepage() {
 
       <div className="container">
         <div className="row">
-          {filteredContacts.map((contact) => (
-            <div className="col-md-4" key={contact._id}>
-              <Card
-                vdata={contact}
-                onDelete={() => handleDelete(contact._id)}
-                onUpdate={(updatedContact) => handleUpdate(contact._id, updatedContact)}
-              />
-            </div>
-          ))}
+
+
+          {
+            contactData.filter((contact) =>
+              contact.name.toLowerCase().startsWith(search.toLowerCase())).
+
+            map((x) => (
+              <div className="col-md-4" key={x.email}>
+                <Card vdata={x} />
+              </div>
+            ))
+          }
+
         </div>
       </div>
 

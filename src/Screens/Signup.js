@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import { Nav } from 'react-bootstrap';
+
 export default function Signup() {
     
     // const [location, setlocation] = useState("");

@@ -4,7 +4,7 @@ import Login from './Screens/Login';
 import Signup from './Screens/Signup';
 import Aboutus from './Screens/Aboutus';
 import Contactus from './Screens/Contactus';
-import MyOrder from './Screens/MyOrder';
+
 
 
 
