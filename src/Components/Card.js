@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Card.css';
 
 export default function Card(props) {
-  
+
   const [editing, setEditing] = useState(false);
   const [name, setName] = useState(props.vdata.name);
   const [email, setEmail] = useState(props.vdata.email);
@@ -19,36 +19,54 @@ export default function Card(props) {
     setName(props.vdata.name);
     setEmail(props.vdata.email);
     setPhone(props.vdata.phone);
-
     setEditing(false);
+
   };
 
 
 
-  const handleSave = () => {
-    fetch('https://mycontactbackend.onrender.com/api/updateData', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email: props.vdata.email, // provide the email associated with the contact
-        contactId: props.vdata._id,
-        name,
-        phone,
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
+  const handleSave = async () => {
+
+
+    let userEmail = localStorage.getItem("userEmail");
+    try {
+      const response = await fetch('https://mycontactbackend.onrender.com/api/updateData', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          userEmail: userEmail,
+
+          email: props.vdata.email, // provide the email associated with the contact
+          name: props.vdata.name,
+          phone: props.vdata.phone,
+
+          newemail: email,
+          newname: name,
+          newphone: phone,
+
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
         if (data.success) {
           setEditing(false);
+
         } else {
           console.error(data.error);
         }
-      })
-      .catch((error) => {
-        console.error('An error occurred while updating the contact:', error);
-      });
+        
+      }
+      else {
+        console.log('Error:', response.status);
+      }
+    } 
+    catch (error) {
+      console.error('An error occurred while updating the contact:', error);
+    }
+
     setEditing(false);
   };
 
@@ -59,22 +77,28 @@ export default function Card(props) {
 
 
     const confirmDelete = window.confirm('Are you sure you want to delete this contact?');
+    var userEmail = localStorage.getItem("userEmail");
 
     if (confirmDelete) {
+
       fetch('https://mycontactbackend.onrender.com/api/deleteData', {
+
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
+          userEmail: userEmail,
           email: props.vdata.email, // provide the email associated with the contact
           name: props.vdata.name,
+          phone: props.vdata.phone,
         }),
       })
         .then((response) => response.json())
         .then((data) => {
+
           if (data.success) {
-            props.onDelete(); // Invoke the onDelete callback passed from the parent component
+           console.log("deleted");
           } else {
             console.error(data.error);
           }
@@ -94,6 +118,7 @@ export default function Card(props) {
   }
 
   return (
+    
     <div className="card mt-3" style={{ width: '18rem', maxHeight: '380px' }}>
       <div style={{ display: 'flex', height: '150px', width: '18rem' }}>
         <img
