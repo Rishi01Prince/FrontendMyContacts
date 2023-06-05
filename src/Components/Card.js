@@ -74,11 +74,11 @@ export default function Card(props) {
 
 
 
-  const handleDelete = () => {
+  const handleDelete =  () => {
 
 
     const confirmDelete = window.confirm('Are you sure you want to delete this contact?');
-    var userEmail = localStorage.getItem("userEmail");
+  
 
     if (confirmDelete) {
 
@@ -89,7 +89,7 @@ export default function Card(props) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          userEmail: userEmail,
+          userEmail: props.uemail,
           email: props.vdata.email, // provide the email associated with the contact
           name: props.vdata.name,
           phone: props.vdata.phone,
