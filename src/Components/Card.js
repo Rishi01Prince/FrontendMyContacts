@@ -37,7 +37,7 @@ export default function Card(props) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          userEmail: props.uemail,
+         id: props.id,
 
           email: props.vdata.email, // provide the email associated with the contact
           name: props.vdata.name,
