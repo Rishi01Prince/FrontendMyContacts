@@ -27,9 +27,7 @@ export default function Card(props) {
 
 
   const handleSave = async () => {
-
-
-  
+    
     try {
       const response = await fetch('https://mycontactbackend.onrender.com/api/updateData', {
         method: 'POST',
