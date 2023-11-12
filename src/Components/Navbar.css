@@ -1,0 +1,86 @@
+/* HomePage.css */
+
+/* Navbar background */
+.navbar {
+  background-color: #071952;
+  font-family: 'Pacifico', cursive;
+  height: 4rem;
+}
+
+/* Navbar brand text color and font size */
+.navbar-brand {
+  color: #1a1a1a;
+  font-size: 2rem;
+}
+
+/* Navbar toggler icon color */
+.navbar-toggler-icon {
+  color: #1a1a1a;
+}
+
+/* Navbar links color and font size */
+.nav-link {
+  color: #1a1a1a;
+  font-size: 1.2rem;
+}
+
+/* Active link color and background color */
+.nav-link.active {
+  color: #ff0000;
+  background-color: #1a1a1a;
+  border-bottom: 3px solid #1a1a1a;
+}
+
+/* Hover link color and background color */
+.nav-link:hover {
+  color: #fff;
+  background-color: #1a1a1a;
+  border-radius: 5px;
+}
+
+/* Dropdown link color and font size */
+.dropdown-toggle {
+  color: #1a1a1a;
+  font-size: 1.2rem;
+}
+
+/* Dropdown menu background color */
+.dropdown-menu {
+  background-image: linear-gradient(to right, #fdca40, #fcbf1e);
+}
+
+/* Dropdown item link color and font size */
+.dropdown-item {
+  color: #1a1a1a;
+  font-size: 1.2rem;
+}
+
+/* Divider color */
+.dropdown-divider {
+  background-color: #1a1a1a;
+}
+
+/* Disabled link color */
+.nav-link.disabled {
+  color: #ffffff;
+}
+
+/* Search input background and border color */
+.form-control {
+  background-color: #1a1a1a;
+  border-color: #666666;
+  color: #fdca40;
+}
+
+/* Search button color */
+.btn-outline-success {
+  color: #fdca40;
+  border-color: #fdca40;
+  font-size: 1.2rem;
+}
+
+/* Search button hover background and text color */
+.btn-outline-success:hover {
+  background-color: #1a1a1a;
+  color: #fdca40;
+}

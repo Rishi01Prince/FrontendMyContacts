@@ -1,0 +1,51 @@
+.card {
+  border: none;
+  box-shadow: 0 0 10px rgba(151, 151, 151, 0.2);
+  transition: all 0.3s ease-in-out;
+  outline: 2px solid transparent;
+  justify-content: center;
+  border: none;
+  width: 100%;
+  margin-right: 24px;
+}
+.card-img-top{
+  width: "100px"; height: "240px";
+  object-fit: cover;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.card-text {
+  font-size: 1rem;
+}
+
+.form-select {
+  font-size: 1rem;
+}
+.btn-primary {
+  background-color: #61c4a5;
+  border-color: #c9b159;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  margin-right: 0.5rem; /* Add right margin for spacing */
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+}
+
+.btn-primary:hover {
+  background-color: #212931b8;
+  border-color: #18212b;
+}
