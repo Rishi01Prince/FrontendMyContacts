@@ -2,7 +2,7 @@ body::-webkit-scrollbar{
   background-color: transparent;
   margin: 20px;
 }
-
+/* hello */
 body::-webkit-scrollbar-thumb{
   background:linear-gradient(#262b2c, #494743,#262b2c);
   border-radius: 20px;
