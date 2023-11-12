@@ -1,21 +1,67 @@
 .footer {
-  background-image: linear-gradient(to right, #fcbf1e, #40d7fd);
-  font-family: 'Pacifico', cursive;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .footer a {
-    color: #ff0000;
-  }
-  
-  .footer a:hover {
-    color: #06ff7f;
-  }
+  background-color: #1a1a1a;
+  color: white;
+  padding: 20px 50px;
+  margin-top: 60px;
+}
 
-  .te{
-    color: #fff;
-    
-  }
-  
+.container-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 8rem;
+  gap: 4rem;
+}
+
+.email-section {
+  display: flex;
+  align-items: center;
+}
+
+.email-input {
+  width: 500px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+
+.subscribe-button {
+  background-color: #8e8e8e;
+  color: white;
+  border: white;
+  border-radius: 0 5px 5px 0;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.subscribe-button:hover{
+  background-color: #a5a5a5;
+}
+
+.social-icons {
+  display: flex;
+  gap: 3rem;
+}
+
+.social-icon {
+  color: white;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.social-icons :hover{
+  color: rgb(130, 255, 107);
+}
+
+.about-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.about-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}

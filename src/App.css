@@ -1,3 +1,13 @@
+body::-webkit-scrollbar{
+  background-color: transparent;
+  margin: 20px;
+}
+
+body::-webkit-scrollbar-thumb{
+  background:linear-gradient(#262b2c, #494743,#262b2c);
+  border-radius: 20px;
+
+}
 .App {
   text-align: center;
 }
@@ -34,5 +44,11 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+*{
+  bottom{
+    background-image: linear-gradient(to bottom, #fcbf1e, #40d7fd);
   }
 }

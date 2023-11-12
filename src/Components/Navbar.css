@@ -2,8 +2,9 @@
 
 /* Navbar background */
 .navbar {
-  background-image: linear-gradient(to right, #40d7fd, #fcbf1e);
+  background-color: #071952;
   font-family: 'Pacifico', cursive;
+  height: 4rem;
 }
 
 /* Navbar brand text color and font size */
@@ -25,7 +26,7 @@
 
 /* Active link color and background color */
 .nav-link.active {
-  color: #fff;
+  color: #ff0000;
   background-color: #1a1a1a;
   border-bottom: 3px solid #1a1a1a;
 }

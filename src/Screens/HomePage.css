@@ -2,14 +2,15 @@
 
 
 .homepage {
-    background-color: #f8f9fa;
+  background-image: linear-gradient(to bottom,  #35A29F, #CCEEBC);
     padding-bottom: 40px;
+    height: 90vh;
   }
 
   /* HomePage.css */
 
 .searchdiv {
-    background-color: #f8f9fa;
+  background-image: linear-gradient(to bottom,  #55555596, #ffffff);
     padding: 20px;
   }
   
@@ -23,7 +24,7 @@
     font-size: 16px;
     border: none;
     border-radius: 25px;
-    background-color: #e9ecef;
+    
     color: #333;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     outline: none;
@@ -42,8 +43,7 @@
 /* Container styles */
 .container {
     text-align: center;
-    margin-top: 20px;
-    color: crimson;
+    color: rgb(89, 89, 89);
     font-family: cursive;
   }
   
@@ -51,49 +51,24 @@
   .search-container {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 40px;
+    height: 90vh;
   }
-  
-  /* Search input styles */
+
   .search-input {
     width: 200px;
-    padding: 10px;
     font-size: 16px;
     border: none;
     border-radius: 20px;
-    background-color: #f8f9fa;
+    background-color: #fff;
     color: #333;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     outline: none;
   }
   
-  /* Optional: Adjust the width and other styles as per your preference */
-  
-
-  .title {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-/*   
-
-  /* Rest of your styles */
-  
-
-  /* HomePage.css */
-
-.title {
-  text-align: center;
-  margin-top: 20px;
-}
 
 .searchdiv {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.container {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .form-label {
@@ -102,10 +77,7 @@
 
 .form-control {
   width: 100%;
-}
-
-.btn-primary {
-  margin-top: 10px;
+  background-color: azure;
 }
 
 .form-container {
@@ -134,9 +106,10 @@
 .form-container .btn-primary {
   display: block;
   width: 100%;
-  padding: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
   font-size: 16px;
-  background-color: #007bff;
+  background-color: #202423;
   border: none;
   border-radius: 4px;
   color: #fff;
@@ -144,5 +117,5 @@
 }
 
 .form-container .btn-primary:hover {
-  background-color: #0069d9;
+  background-color: #323232c1;
 }
